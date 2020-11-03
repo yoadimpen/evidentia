@@ -1,1 +1,0 @@
-{"virtualbox":{"/home/vagrant/laravel":{"type":null,"mount_options":["uid=1000","gid=1000"],"guestpath":"/home/vagrant/laravel","hostpath":"F:/EGC/Evidentia/evidentia","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"F:/EGC/Evidentia/evidentia/homestead","disabled":false,"__vagrantfile":true}}}

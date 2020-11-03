@@ -12,9 +12,6 @@
             <x-li route="attendee.list" icon='fas fa-hiking' name="Mis asistencias"/>
             <!-- <x-li route="home" icon='fas fa-folder' name="Gestor de archivos"/> -->
 
-            <x-li route="note.create" icon='far fa-sticky-note' name="Crear nota"/>
-            <x-li route="note.list" icon='fas fa-sticky-note' name="Mis notas"/>
-
         </ul>
     </nav>
 @endif
