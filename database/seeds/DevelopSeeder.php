@@ -4,6 +4,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Str;
+use Carbon\Carbon;
 
 class DevelopSeeder extends Seeder
 {
@@ -487,6 +488,14 @@ class DevelopSeeder extends Seeder
 
         DB::table('configuration')->insert([
             'secret' => Str::random(10),
+        ]);
+
+        DB::table('notes')->insert([
+            'user_id' => 1,
+            'title' => "Esto es un título",
+            'description' => "Esto es una descripción",
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
 
     }
