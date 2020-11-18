@@ -498,5 +498,13 @@ class DevelopSeeder extends Seeder
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
 
+        DB::table('contacts')->insert([
+            'user_id' => 1,
+            'name' => "Lexa",
+            'surname' => "Commander",
+            'phone' => "+34 999 99 99 99",
+            'company' => "Trikru"
+        ]);
+
     }
 }
