@@ -52,7 +52,7 @@
 
                         <div class="form-row">
 
-                            <x-input col="6" attr="phone" :value="$contact->phone ?? ''" label="Teléfono" description="Escribe el teléfono de tu contacto"/>
+                            <x-input col="6" attr="phone" :value="$contact->phone ?? ''" label="Teléfono" description="Escribe el teléfono de tu contacto con formato recomendable +(YYY) XXXXXXXXX"/>
 
                         </div>
 

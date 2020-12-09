@@ -27,7 +27,7 @@ class ContactController extends Controller
         $request->validate([
             'name' => 'required',
             'surname' => 'required',
-            'phone' => 'required', //regex:pattern for the pattern
+            'phone' => 'required|regex:/^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\.\/0-9]*$/',
             'company' => 'required',
         ]);
 
@@ -57,7 +57,7 @@ class ContactController extends Controller
         $request->validate([
             'name' => 'required',
             'surname' => 'required',
-            'phone' => 'required|regex:^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$', //[new PhonePattern()],
+            'phone' => 'required|regex:/^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\.\/0-9]*$/',
             'company' => 'required',
         ]);
 
