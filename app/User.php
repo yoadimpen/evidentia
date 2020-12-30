@@ -324,7 +324,14 @@ class User extends Authenticatable
         return $comittees_names;
     }
 
-    public function notes(){
+    public function incidents()
+    {
+        return $this->hasMany('App\Incident');
+    }
+
+    public function notes()
+    {
         return $this->hasMany('App\Note');
-   }
+    }
+
 }
