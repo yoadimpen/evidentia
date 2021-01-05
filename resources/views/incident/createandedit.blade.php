@@ -69,7 +69,7 @@
 
                             <x-textarea col="6" attr="solution" :value="$note->solution ?? ''"
                                         label="Solución a la incidencia"
-                                        description="Escribe una solución de la incidencia."
+                                        description="Escribe una solución de la incidencia. Si no hay una solución previa escriba 'No hay solución'."
                             />
 
                         </div>
