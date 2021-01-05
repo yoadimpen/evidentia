@@ -160,4 +160,20 @@ class Evidence extends Model
         return Evidence::where('comittee_id','=', '4')->orderByDesc('updated_at')->get();
     }
 
+    public static function evidences_sostenibilidad() {
+        return Evidence::where('comittee_id','=', '5')->orderByDesc('updated_at')->get();
+    }
+
+    public static function evidences_finanzas() {
+        return Evidence::where('comittee_id','=', '6')->orderByDesc('updated_at')->get();
+    }
+
+    public static function evidences_logistica() {
+        return Evidence::where('comittee_id','=', '7')->orderByDesc('updated_at')->get();
+    }
+
+    public static function evidences_comunicacion() {
+        return Evidence::where('comittee_id','=', '8')->orderByDesc('updated_at')->get();
+    }
+
 }

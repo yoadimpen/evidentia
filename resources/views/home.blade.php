@@ -199,6 +199,62 @@
                             </div>
                         </div>
 
+                        <div class="col-lg-6 col-sm-12">
+                            <div class="info-box">
+                                <span class="info-box-icon bg-light elevation-1"><i class="fas fa-piggy-bank"></i></span>
+
+                                <div class="info-box-content">
+                                    <span class="info-box-text">Evidencias Sostenibilidad</span>
+                                    <span class="info-box-number">
+                                 {{\App\Evidence::evidences_sostenibilidad()->count()}}
+                               </span>
+                               </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-sm-12">
+                            <div class="info-box">
+                                <span class="info-box-icon bg-light elevation-1"><i class="fas fa-euro-sign"></i></span>
+
+                                <div class="info-box-content">
+                                    <span class="info-box-text">Evidencias Finanzas</span>
+                                    <span class="info-box-number">
+                                 {{\App\Evidence::evidences_finanzas()->count()}}
+                               </span>
+                               </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-sm-12">
+                            <div class="info-box">
+                                <span class="info-box-icon bg-light elevation-1"><i class="fas fa-user-check"></i></span>
+
+                                <div class="info-box-content">
+                                    <span class="info-box-text">Evidencias Logística</span>
+                                    <span class="info-box-number">
+                                 {{\App\Evidence::evidences_logistica()->count()}}
+                               </span>
+                               </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-sm-12">
+                            <div class="info-box">
+                                <span class="info-box-icon bg-light elevation-1"><i class="fas fa-users"></i></span>
+
+                                <div class="info-box-content">
+                                    <span class="info-box-text">Evidencias Comunicación</span>
+                                    <span class="info-box-number">
+                                 {{\App\Evidence::evidences_comunicacion()->count()}}
+                               </span>
+                               </div>
+
+                            </div>
+                        </div>
+
                     </div>
 
                 </div>
