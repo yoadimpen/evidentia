@@ -40,18 +40,93 @@
                         <div class="col-lg-6 col-sm-12">
                             <x-infoevidencetotalcount :user="Auth::user()" />
                         </div>
+
+                        <div class="col-lg-6 col-sm-12">
+                            <div class="info-box">
+                                <span class="info-box-icon bg-light elevation-1"><i class="nav-icon fab fa-angellist"></i></span>
+
+                                <div class="info-box-content">
+                                    <span class="info-box-text">Evidencias en total</span>
+                                    <span class="info-box-number">
+                                  {{\App\Evidence::evidences_not_draft()->count()}}
+                                </span>
+                                </div>
+
+                            </div>
+                        </div>
+
                         <div class="col-lg-6 col-sm-12">
                             <x-infoevidencetotalcountdraft :user="Auth::user()" />
                         </div>
+
+                        <div class="col-lg-6 col-sm-12">
+                            <div class="info-box">
+                                <span class="info-box-icon bg-light elevation-1"><i class="fas fa-pencil-ruler"></i></span>
+
+                                <div class="info-box-content">
+                                    <span class="info-box-text">Evidencias en borrador</span>
+                                    <span class="info-box-number">
+                                  {{\App\Evidence::evidences_draft()->count()}}
+                                </span>
+                                </div>
+
+                            </div>
+                        </div>
+
                         <div class="col-lg-6 col-sm-12">
                             <x-infoevidencetotalcountpending :user="Auth::user()" />
                         </div>
+
+                        <div class="col-lg-6 col-sm-12">
+                            <div class="info-box">
+                                <span class="info-box-icon bg-light elevation-1"><i class="fas fa-clock"></i></span>
+
+                                <div class="info-box-content">
+                                    <span class="info-box-text">Evidencias pendientes</span>
+                                    <span class="info-box-number">
+                                  {{\App\Evidence::evidences_pending()->count()}}
+                                </span>
+                                </div>
+
+                            </div>
+                        </div>
+
                         <div class="col-lg-6 col-sm-12">
                             <x-infoevidencetotalcountaccepted :user="Auth::user()" />
                         </div>
+
+                        <div class="col-lg-6 col-sm-12">
+                            <div class="info-box">
+                                <span class="info-box-icon bg-light elevation-1"><i class="far fa-thumbs-up"></i></span>
+
+                                <div class="info-box-content">
+                                    <span class="info-box-text">Evidencias aceptadas</span>
+                                    <span class="info-box-number">
+                                  {{\App\Evidence::evidences_accepted()->count()}}
+                                </span>
+                                </div>
+
+                            </div>
+                        </div>
+
                         <div class="col-lg-6 col-sm-12">
                             <x-infoevidencetotalcountrejected :user="Auth::user()" />
                         </div>
+
+                        <div class="col-lg-6 col-sm-12">
+                            <div class="info-box">
+                                <span class="info-box-icon bg-light elevation-1"><i class="far fa-thumbs-down"></i></span>
+
+                                <div class="info-box-content">
+                                    <span class="info-box-text">Evidencias rechazadas</span>
+                                    <span class="info-box-number">
+                                 {{\App\Evidence::evidences_rejected()->count()}}
+                               </span>
+                               </div>
+
+                            </div>
+                        </div>
+
                     </div>
 
                 </div>
