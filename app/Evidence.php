@@ -143,4 +143,21 @@ class Evidence extends Model
         return $this->stamp == \Stamp::get_stamp_evidence($this);
     }
 
+    // evidencias por comité
+    public static function evidences_presidencia() {
+        return Evidence::where('comittee_id','=', '1')->orderByDesc('updated_at')->get();
+    }
+
+    public static function evidences_secretaria() {
+        return Evidence::where('comittee_id','=', '2')->orderByDesc('updated_at')->get();
+    }
+
+    public static function evidences_programa() {
+        return Evidence::where('comittee_id','=', '3')->orderByDesc('updated_at')->get();
+    }
+
+    public static function evidences_igualdad() {
+        return Evidence::where('comittee_id','=', '4')->orderByDesc('updated_at')->get();
+    }
+
 }

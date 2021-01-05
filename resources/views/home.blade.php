@@ -133,6 +133,78 @@
 
             </div>
 
+            {{-- EVIDENCIAS POR COMITÉ --}}
+            <div class="card">
+                <div class="card-header bg-dark">
+                    <h3 class="card-title">Evidencias por comité</h3>
+                </div>
+
+                <div class="card-body pb-0">
+
+                    <div class="row">
+
+                        <div class="col-lg-6 col-sm-12">
+                            <div class="info-box">
+                                <span class="info-box-icon bg-light elevation-1"><i class="fas fa-user-tie"></i></span>
+
+                                <div class="info-box-content">
+                                    <span class="info-box-text">Evidencias Presidencia</span>
+                                    <span class="info-box-number">
+                                  {{\App\Evidence::evidences_presidencia()->count()}}
+                                </span>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-sm-12">
+                            <div class="info-box">
+                                <span class="info-box-icon bg-light elevation-1"><i class="fas fa-file-signature"></i></span>
+
+                                <div class="info-box-content">
+                                    <span class="info-box-text">Evidencias Secretaría</span>
+                                    <span class="info-box-number">
+                                  {{\App\Evidence::evidences_secretaria()->count()}}
+                                </span>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-sm-12">
+                            <div class="info-box">
+                                <span class="info-box-icon bg-light elevation-1"><i class="fas fa-list-ol"></i></span>
+
+                                <div class="info-box-content">
+                                    <span class="info-box-text">Evidencias Programa</span>
+                                    <span class="info-box-number">
+                                  {{\App\Evidence::evidences_programa()->count()}}
+                                </span>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-sm-12">
+                            <div class="info-box">
+                                <span class="info-box-icon bg-light elevation-1"><i class="fas fa-people-carry"></i></span>
+
+                                <div class="info-box-content">
+                                    <span class="info-box-text">Evidencias Igualdad</span>
+                                    <span class="info-box-number">
+                                  {{\App\Evidence::evidences_igualdad()->count()}}
+                                </span>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
             <div class="card">
                 <div class="card-header bg-dark">
                     <h3 class="card-title">Resumen de mis reuniones y eventos</h3>
@@ -158,7 +230,6 @@
 
                 </div>
             </div>
-
 
         </div>
 
