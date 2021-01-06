@@ -33,34 +33,34 @@ class Meeting extends Model
     }
 
     public static function meetings_presidencia() {
-        return Meeting::where('comittee_id','=', '1')->orderByDesc('updated_at')->get();
+        return Meeting::where('comittee_id','=', '1')->count();
     }
 
     public static function meetings_secretaria() {
-        return Meeting::where('comittee_id','=', '2')->orderByDesc('updated_at')->get();
+        return Meeting::where('comittee_id','=', '2')->count();
     }
 
     public static function meetings_programa() {
-        return Meeting::where('comittee_id','=', '3')->orderByDesc('updated_at')->get();
+        return Meeting::where('comittee_id','=', '3')->count();
     }
 
     public static function meetings_igualdad() {
-        return Meeting::where('comittee_id','=', '4')->orderByDesc('updated_at')->get();
+        return Meeting::where('comittee_id','=', '4')->count();
     }
 
     public static function meetings_sostenibilidad() {
-        return Meeting::where('comittee_id','=', '5')->orderByDesc('updated_at')->get();
+        return Meeting::where('comittee_id','=', '5')->count();
     }
 
     public static function meetings_finanzas() {
-        return Evidence::where('comittee_id','=', '6')->orderByDesc('updated_at')->get();
+        return Meeting::where('comittee_id','=', '6')->count();
     }
 
     public static function meetings_logistica() {
-        return Meeting::where('comittee_id','=', '7')->orderByDesc('updated_at')->get();
+        return Meeting::where('comittee_id','=', '7')->count();
     }
 
     public static function meetings_comunicacion() {
-        return Meeting::where('comittee_id','=', '8')->orderByDesc('updated_at')->get();
+        return Meeting::where('comittee_id','=', '8')->count();
     }
 }
