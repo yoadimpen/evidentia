@@ -226,7 +226,7 @@
         {{-- SUBCOMITÉS --}}
         <div class="card">
             <div class="card-header bg-dark">
-                <h3 class="card-title">Subcomités de cada comité</h3>
+                <h3 class="card-title">Número de subcomités de cada comité</h3>
             </div>
             <div class="card-body pb-0">
                 <div class="row">
