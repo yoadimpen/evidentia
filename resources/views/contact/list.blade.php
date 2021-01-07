@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Mis contacts')
+@section('title', 'Mis contactos')
 
 @section('title-icon', 'fas fa-address-book')
 
