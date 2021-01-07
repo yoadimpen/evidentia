@@ -333,4 +333,19 @@ Route::group(['prefix' => '{instance}', 'middleware' => ['checkblock']], functio
     // Eliminar una nota
     Route::post('note/remove', 'NoteController@remove')->name('note.remove');
 
+    /*
+        AGENDA DE CONTACTOS
+    */
+    Route::prefix('contact')->group(function(){
+        //Listar los contactos
+        Route::get('list', 'ContactController@list')->name('contact.list');
+        //Crear un contacto
+        Route::get('create', 'ContactController@create')->name('contact.create');
+        Route::post('new', 'ContactController@new')->name('contact.new');
+        //Editar un contacto
+        Route::get('edit/{id}', 'ContactController@edit')->name('contact.edit');
+        Route::post('save', 'ContactController@save')->name('contact.save');
+        //Eliminar un contacto
+        Route::post('remove', 'ContactController@remove')->name('contact.remove');
+    });
 });
