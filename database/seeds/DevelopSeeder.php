@@ -503,6 +503,7 @@ class DevelopSeeder extends Seeder
             'name' => "Lexa",
             'surname' => "Commander",
             'phone' => "+34 999 99 99 99",
+            'email' => "lexa@trikru.com",
             'company' => "Trikru"
         ]);
 

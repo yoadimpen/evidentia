@@ -26,6 +26,7 @@
                             <th>Nombre</th>
                             <th>Apellidos</th>
                             <th>Teléfono</th>
+                            <th>Email</th>
                             <th>Empresa</th>
                             <th>Opciones</th>
                         </tr>
@@ -38,6 +39,7 @@
                                 <td>{{$contact->name}}</td>
                                 <td>{{$contact->surname}}</td>
                                 <td>{{$contact->phone}}</td>
+                                <td>{{$contact->email}}</td>
                                 <td>{{$contact->company}}</td>
                                 <td>
 
