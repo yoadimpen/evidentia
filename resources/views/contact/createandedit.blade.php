@@ -58,6 +58,12 @@
 
                         <div class="form-row">
 
+                            <x-input col="6" attr="email" :value="$contact->email ?? ''" label="Correo Electrónico" description="Escribe el correo electrónico de tu contacto con formato recomendable abcdefg@mail.com"/>
+
+                        </div>
+
+                        <div class="form-row">
+
                             <x-input col="6" attr="company" :value="$contact->company ?? ''" label="Empresa" description="Escribe la empresa de tu contacto"/>
 
                         </div>

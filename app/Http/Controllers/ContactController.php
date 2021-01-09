@@ -28,6 +28,7 @@ class ContactController extends Controller
             'name' => 'required',
             'surname' => 'required',
             'phone' => 'required|regex:/^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\.\/0-9]*$/',
+            'email' => 'required|regex:/^[\w\-\.]+@([\w\-]+\.)+[\w\-]{2,4}$/',
             'company' => 'required',
         ]);
 
@@ -36,6 +37,7 @@ class ContactController extends Controller
             'name' => $request->input('name'),
             'surname' => $request->input('surname'),
             'phone' => $request->input('phone'),
+            'email' => $request->input('email'),
             'company' => $request->input('company'),
             'user_id' => $user->id,
         ]);
@@ -58,6 +60,7 @@ class ContactController extends Controller
             'name' => 'required',
             'surname' => 'required',
             'phone' => 'required|regex:/^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\.\/0-9]*$/',
+            'email' => 'required',
             'company' => 'required',
         ]);
 
@@ -66,6 +69,7 @@ class ContactController extends Controller
         $contact->name = $request->input('name');
         $contact->surname = $request->input('surname');
         $contact->phone = $request->input('phone');
+        $contact->email = $request->input('email');
         $contact->company = $request->input('company');
 
         $contact->save();
