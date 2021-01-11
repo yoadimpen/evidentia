@@ -95,7 +95,7 @@ class InstanceTest extends TestCase
         $response->assertStatus(200);
     }
 
-    /*public function testRemoveInstance()
+    public function testRemoveInstance()
     {
         $this->withoutExceptionHandling();
         $this->testAdminLoginTrue();
@@ -107,5 +107,5 @@ class InstanceTest extends TestCase
 
         $response = $this->post('admin/instance/manage/remove',$request);
         $response->assertStatus(302);
-    }*/
+    }
 }

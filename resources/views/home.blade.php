@@ -40,18 +40,221 @@
                         <div class="col-lg-6 col-sm-12">
                             <x-infoevidencetotalcount :user="Auth::user()" />
                         </div>
+
+                        <div class="col-lg-6 col-sm-12">
+                            <div class="info-box">
+                                <span class="info-box-icon bg-light elevation-1"><i class="nav-icon fab fa-angellist"></i></span>
+
+                                <div class="info-box-content">
+                                    <span class="info-box-text">Evidencias en total</span>
+                                    <span class="info-box-number">
+                                  {{\App\Evidence::evidences_not_draft()->count()}}
+                                </span>
+                                </div>
+
+                            </div>
+                        </div>
+
                         <div class="col-lg-6 col-sm-12">
                             <x-infoevidencetotalcountdraft :user="Auth::user()" />
                         </div>
+
+                        <div class="col-lg-6 col-sm-12">
+                            <div class="info-box">
+                                <span class="info-box-icon bg-light elevation-1"><i class="fas fa-pencil-ruler"></i></span>
+
+                                <div class="info-box-content">
+                                    <span class="info-box-text">Evidencias en borrador</span>
+                                    <span class="info-box-number">
+                                  {{\App\Evidence::evidences_draft()->count()}}
+                                </span>
+                                </div>
+
+                            </div>
+                        </div>
+
                         <div class="col-lg-6 col-sm-12">
                             <x-infoevidencetotalcountpending :user="Auth::user()" />
                         </div>
+
+                        <div class="col-lg-6 col-sm-12">
+                            <div class="info-box">
+                                <span class="info-box-icon bg-light elevation-1"><i class="fas fa-clock"></i></span>
+
+                                <div class="info-box-content">
+                                    <span class="info-box-text">Evidencias pendientes</span>
+                                    <span class="info-box-number">
+                                  {{\App\Evidence::evidences_pending()->count()}}
+                                </span>
+                                </div>
+
+                            </div>
+                        </div>
+
                         <div class="col-lg-6 col-sm-12">
                             <x-infoevidencetotalcountaccepted :user="Auth::user()" />
                         </div>
+
+                        <div class="col-lg-6 col-sm-12">
+                            <div class="info-box">
+                                <span class="info-box-icon bg-light elevation-1"><i class="far fa-thumbs-up"></i></span>
+
+                                <div class="info-box-content">
+                                    <span class="info-box-text">Evidencias aceptadas</span>
+                                    <span class="info-box-number">
+                                  {{\App\Evidence::evidences_accepted()->count()}}
+                                </span>
+                                </div>
+
+                            </div>
+                        </div>
+
                         <div class="col-lg-6 col-sm-12">
                             <x-infoevidencetotalcountrejected :user="Auth::user()" />
                         </div>
+
+                        <div class="col-lg-6 col-sm-12">
+                            <div class="info-box">
+                                <span class="info-box-icon bg-light elevation-1"><i class="far fa-thumbs-down"></i></span>
+
+                                <div class="info-box-content">
+                                    <span class="info-box-text">Evidencias rechazadas</span>
+                                    <span class="info-box-number">
+                                 {{\App\Evidence::evidences_rejected()->count()}}
+                               </span>
+                               </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            {{-- EVIDENCIAS POR COMITÉ --}}
+            <div class="card">
+                <div class="card-header bg-dark">
+                    <h3 class="card-title">Evidencias por comité</h3>
+                </div>
+
+                <div class="card-body pb-0">
+
+                    <div class="row">
+
+                        <div class="col-lg-6 col-sm-12">
+                            <div class="info-box">
+                                <span class="info-box-icon bg-light elevation-1"><i class="fas fa-user-tie"></i></span>
+
+                                <div class="info-box-content">
+                                    <span class="info-box-text">Evidencias Presidencia</span>
+                                    <span class="info-box-number">
+                                  {{\App\Evidence::evidences_presidencia()->count()}}
+                                </span>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-sm-12">
+                            <div class="info-box">
+                                <span class="info-box-icon bg-light elevation-1"><i class="fas fa-file-signature"></i></span>
+
+                                <div class="info-box-content">
+                                    <span class="info-box-text">Evidencias Secretaría</span>
+                                    <span class="info-box-number">
+                                  {{\App\Evidence::evidences_secretaria()->count()}}
+                                </span>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-sm-12">
+                            <div class="info-box">
+                                <span class="info-box-icon bg-light elevation-1"><i class="fas fa-list-ol"></i></span>
+
+                                <div class="info-box-content">
+                                    <span class="info-box-text">Evidencias Programa</span>
+                                    <span class="info-box-number">
+                                  {{\App\Evidence::evidences_programa()->count()}}
+                                </span>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-sm-12">
+                            <div class="info-box">
+                                <span class="info-box-icon bg-light elevation-1"><i class="fas fa-people-carry"></i></span>
+
+                                <div class="info-box-content">
+                                    <span class="info-box-text">Evidencias Igualdad</span>
+                                    <span class="info-box-number">
+                                  {{\App\Evidence::evidences_igualdad()->count()}}
+                                </span>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-sm-12">
+                            <div class="info-box">
+                                <span class="info-box-icon bg-light elevation-1"><i class="fas fa-piggy-bank"></i></span>
+
+                                <div class="info-box-content">
+                                    <span class="info-box-text">Evidencias Sostenibilidad</span>
+                                    <span class="info-box-number">
+                                 {{\App\Evidence::evidences_sostenibilidad()->count()}}
+                               </span>
+                               </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-sm-12">
+                            <div class="info-box">
+                                <span class="info-box-icon bg-light elevation-1"><i class="fas fa-euro-sign"></i></span>
+
+                                <div class="info-box-content">
+                                    <span class="info-box-text">Evidencias Finanzas</span>
+                                    <span class="info-box-number">
+                                 {{\App\Evidence::evidences_finanzas()->count()}}
+                               </span>
+                               </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-sm-12">
+                            <div class="info-box">
+                                <span class="info-box-icon bg-light elevation-1"><i class="fas fa-user-check"></i></span>
+
+                                <div class="info-box-content">
+                                    <span class="info-box-text">Evidencias Logística</span>
+                                    <span class="info-box-number">
+                                 {{\App\Evidence::evidences_logistica()->count()}}
+                               </span>
+                               </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-sm-12">
+                            <div class="info-box">
+                                <span class="info-box-icon bg-light elevation-1"><i class="fas fa-users"></i></span>
+
+                                <div class="info-box-content">
+                                    <span class="info-box-text">Evidencias Comunicación</span>
+                                    <span class="info-box-number">
+                                 {{\App\Evidence::evidences_comunicacion()->count()}}
+                               </span>
+                               </div>
+
+                            </div>
+                        </div>
+
                     </div>
 
                 </div>
@@ -83,7 +286,6 @@
 
                 </div>
             </div>
-
 
         </div>
 

@@ -18,6 +18,9 @@
             <x-li route="note.create" icon='far fa-sticky-note' name="Crear nota"/>
             <x-li route="note.list" icon='fas fa-sticky-note' name="Mis notas"/>
 
+            <x-li route="contact.create" icon='far fa-address-book' name="Crear contacto"/>
+            <x-li route="contact.list" icon='fas fa-address-book' name="Mis contactos"/>
+
         </ul>
     </nav>
 @endif
