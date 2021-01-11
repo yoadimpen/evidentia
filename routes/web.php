@@ -322,6 +322,17 @@ Route::group(['prefix' => '{instance}', 'middleware' => ['checkblock']], functio
         Route::post('/update_p/{token}','PasswordResetController@update_p')->name('password.update_p');
     });
 
+    // Listar las incidencias
+    Route::get('incident/list', 'IncidentController@list')->name('incident.list');
+    // Crear una incidencia
+    Route::get('incident/create', 'IncidentController@create')->name('incident.create');
+    Route::post('incident/new', 'IncidentController@new')->name('incident.new');
+    // Editar una incidencia
+    Route::get('incident/edit/{id}', 'IncidentController@edit')->name('incident.edit');
+    Route::post('incident/save', 'IncidentController@save')->name('incident.save');
+    // Eliminar una incidencia
+    Route::post('incident/remove', 'IncidentController@remove')->name('incident.remove');
+
     // Listar las notas
     Route::get('note/list', 'NoteController@list')->name('note.list');
     // Crear una nota
