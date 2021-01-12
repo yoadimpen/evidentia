@@ -321,33 +321,6 @@
                 </div>
             </div>
         </div>
-
-        <div class="card">
-            <div class="card-header bg-dark">
-                <h3 class="card-title">Resumen de mis reuniones y eventos</h3>
-            </div>
-
-            <div class="card-body pb-0">
-
-                <div class="row">
-
-                    <div class="col-lg-6 col-sm-12">
-                        <x-infomeetingcount :user="Auth::user()" />
-                    </div>
-
-                    <div class="col-lg-6 col-sm-12">
-                        <x-infoeventtotalcheckedin :user="Auth::user()" />
-                    </div>
-
-                    <div class="col-lg-6 col-sm-12">
-                        <x-infoeventtotalattending :user="Auth::user()" />
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
-
     </div>
 </div>
 
