@@ -31,4 +31,36 @@ class Meeting extends Model
     {
         return $this->hasMany('App\MeetingMinutes');
     }
+
+    public static function meetings_presidencia() {
+        return Meeting::where('comittee_id','=', '1')->count();
+    }
+
+    public static function meetings_secretaria() {
+        return Meeting::where('comittee_id','=', '2')->count();
+    }
+
+    public static function meetings_programa() {
+        return Meeting::where('comittee_id','=', '3')->count();
+    }
+
+    public static function meetings_igualdad() {
+        return Meeting::where('comittee_id','=', '4')->count();
+    }
+
+    public static function meetings_sostenibilidad() {
+        return Meeting::where('comittee_id','=', '5')->count();
+    }
+
+    public static function meetings_finanzas() {
+        return Meeting::where('comittee_id','=', '6')->count();
+    }
+
+    public static function meetings_logistica() {
+        return Meeting::where('comittee_id','=', '7')->count();
+    }
+
+    public static function meetings_comunicacion() {
+        return Meeting::where('comittee_id','=', '8')->count();
+    }
 }
