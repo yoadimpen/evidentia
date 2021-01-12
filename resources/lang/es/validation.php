@@ -181,5 +181,7 @@ return [
         'title'                 => 'título',
         'username'              => 'usuario',
         'year'                  => 'año',
+        'upload_evidences_date' => 'fecha de subida de evidencias',
+        'validate_evidences_date' => 'fecha de validación de evidencias'
     ],
 ];
