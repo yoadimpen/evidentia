@@ -366,6 +366,7 @@
         </div>
 
         {{-- REUNIONES DE CADA COMITÉ --}}
+        @if(Auth::user()->hasRole('LECTURE'))
         <div class="card">
             <div class="card-header bg-dark">
                 <h3 class="card-title">Reuniones de cada comité</h3>
@@ -463,8 +464,10 @@
                 </div>
             </div>
         </div>
+        @endif
 
         {{-- SUBCOMITÉS --}}
+        @if(Auth::user()->hasRole('LECTURE'))
         <div class="card">
             <div class="card-header bg-dark">
                 <h3 class="card-title">Número de subcomités de cada comité</h3>
@@ -562,6 +565,7 @@
                 </div>
             </div>
         </div>
+        @endif
     </div>
 </div>
 
