@@ -45,7 +45,7 @@ class MeetingSecretaryController extends Controller
         $validatedData = $request->validate([
             'title' => 'required|min:5|max:255',
             'type' => 'required|numeric|min:1|max:2',
-            'hours' => 'required|numeric|between:0.5,99.99|max:100',
+            'hours' => 'required|numeric|between:0.5,24.0|max:24.01',
             'place' => 'required|min:5|max:255',
             'date' => 'required|date_format:Y-m-d|before:today',
             'time' => 'required',
