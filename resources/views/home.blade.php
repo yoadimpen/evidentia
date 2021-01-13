@@ -154,6 +154,7 @@
             </div>
 
             {{-- EVIDENCIAS POR COMITÉ --}}
+            @if(Auth::user()->hasRole('LECTURE'))
             <div class="card">
                 <div class="card-header bg-dark">
                     <h3 class="card-title">Evidencias por comité</h3>
@@ -294,10 +295,11 @@
                         <x-infoevidencetotalcountrejected :user="Auth::user()" />
                     </div>
                 </div>
-
+                
             </div>
 
         </div>
+        @endif
 
         <div class="card">
             <div class="card-header bg-dark">
