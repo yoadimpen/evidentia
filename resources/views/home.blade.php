@@ -37,10 +37,13 @@
             <div class="card-body pb-0">
 
                     <div class="row">
+                        @if(Auth::user()->hasRole('STUDENT'))
                         <div class="col-lg-6 col-sm-12">
                             <x-infoevidencetotalcount :user="Auth::user()" />
                         </div>
+                        @endif
 
+                        @if(Auth::user()->hasRole('LECTURE'))
                         <div class="col-lg-6 col-sm-12">
                             <div class="info-box">
                                 <span class="info-box-icon bg-light elevation-1"><i class="nav-icon fab fa-angellist"></i></span>
@@ -54,11 +57,15 @@
 
                             </div>
                         </div>
+                        @endif
 
+                        @if(Auth::user()->hasRole('STUDENT'))
                         <div class="col-lg-6 col-sm-12">
                             <x-infoevidencetotalcountdraft :user="Auth::user()" />
                         </div>
+                        @endif
 
+                        @if(Auth::user()->hasRole('LECTURE'))
                         <div class="col-lg-6 col-sm-12">
                             <div class="info-box">
                                 <span class="info-box-icon bg-light elevation-1"><i class="fas fa-pencil-ruler"></i></span>
@@ -72,11 +79,15 @@
 
                             </div>
                         </div>
+                        @endif
 
+                        @if(Auth::user()->hasRole('STUDENT'))
                         <div class="col-lg-6 col-sm-12">
                             <x-infoevidencetotalcountpending :user="Auth::user()" />
                         </div>
+                        @endif
 
+                        @if(Auth::user()->hasRole('LECTURE'))
                         <div class="col-lg-6 col-sm-12">
                             <div class="info-box">
                                 <span class="info-box-icon bg-light elevation-1"><i class="fas fa-clock"></i></span>
@@ -90,11 +101,15 @@
 
                             </div>
                         </div>
+                        @endif
 
+                        @if(Auth::user()->hasRole('STUDENT'))
                         <div class="col-lg-6 col-sm-12">
                             <x-infoevidencetotalcountaccepted :user="Auth::user()" />
                         </div>
+                        @endif
 
+                        @if(Auth::user()->hasRole('LECTURE'))
                         <div class="col-lg-6 col-sm-12">
                             <div class="info-box">
                                 <span class="info-box-icon bg-light elevation-1"><i class="far fa-thumbs-up"></i></span>
@@ -108,11 +123,15 @@
 
                             </div>
                         </div>
+                        @endif
 
+                        @if(Auth::user()->hasRole('STUDENT'))
                         <div class="col-lg-6 col-sm-12">
                             <x-infoevidencetotalcountrejected :user="Auth::user()" />
                         </div>
+                        @endif
 
+                        @if(Auth::user()->hasRole('LECTURE'))
                         <div class="col-lg-6 col-sm-12">
                             <div class="info-box">
                                 <span class="info-box-icon bg-light elevation-1"><i class="far fa-thumbs-down"></i></span>
@@ -126,6 +145,7 @@
 
                             </div>
                         </div>
+                        @endif
 
                     </div>
 
