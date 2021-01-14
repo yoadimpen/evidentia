@@ -49,7 +49,7 @@
 
                         <div class="form-row">
 
-                            <x-textarea col="6" attr="description" :value="$note->description ?? ''"
+                            <x-textarea col="6" attr="description" :value="$incident->description ?? ''"
                                         label="Descripción de la incidencia"
                                         description="Escribe una descripción concisa de la incidencia."
                             />
@@ -58,7 +58,7 @@
 
                         <div class="form-row">
 
-                            <x-input col="6" attr="date" :value="$note->date ?? ''"
+                            <x-input col="6" attr="date" :value="$incident->date ?? ''"
                                         label="Fecha de la incidencia"
                                         description="Escribe la fecha de la incidencia."
                             />
@@ -67,7 +67,7 @@
 
                         <div class="form-row">
 
-                            <x-textarea col="6" attr="solution" :value="$note->solution ?? ''"
+                            <x-textarea col="6" attr="solution" :value="$incident->solution ?? ''"
                                         label="Solución a la incidencia"
                                         description="Escribe una solución de la incidencia. Si no hay una solución previa escriba: 'No hay solución'."
                             />

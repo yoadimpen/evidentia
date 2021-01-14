@@ -29,12 +29,14 @@ class NoteController extends Controller
     {
         $request->validate([
             'title' => 'required|min:5|max:255',
+            'date' => 'required|',
             'description' => ['required',new MinCharacters(10),new MaxCharacters(20000)],
         ]);
 
         $user = Auth::user();
         $note = Note::create([
             'title' => $request->input('title'),
+            'date' => $request->input('date'),
             'description' => $request->input('description'),
             'user_id' => $user->id,
         ]);
@@ -56,6 +58,7 @@ class NoteController extends Controller
     {
         $request->validate([
             'title' => 'required|min:5|max:255',
+            'date' => 'required|',
             'description' => ['required',new MinCharacters(10),new MaxCharacters(20000)],
         ]);
 
@@ -63,6 +66,7 @@ class NoteController extends Controller
 
         $note = Note::find($request->_id);
         $note->title = $request->input('title');
+        $note->date = $request->input('date');
         $note->description = $request->input('description');
 
         $note->save();

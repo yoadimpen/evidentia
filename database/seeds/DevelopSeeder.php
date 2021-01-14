@@ -511,6 +511,7 @@ class DevelopSeeder extends Seeder
         DB::table('notes')->insert([
             'user_id' => 1,
             'title' => "Esto es un título",
+            'date' => "13/01/2021",
             'description' => "Esto es una descripción",
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
