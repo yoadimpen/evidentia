@@ -38,6 +38,6 @@ class MaxCharacters implements Rule
      */
     public function message()
     {
-        return 'Debe tener un máximo de '.$this->max.' caracteres.';
+        return 'Este atributo debe tener un máximo de '.$this->max.' caracteres.';
     }
 }
