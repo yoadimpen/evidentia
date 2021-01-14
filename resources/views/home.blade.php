@@ -31,7 +31,12 @@
 
         <div class="card">
             <div class="card-header bg-dark">
+                @if(Auth::user()->hasRole('STUDENT'))
                 <h3 class="card-title">Resumen de mis evidencias</h3>
+                @endif
+                @if(Auth::user()->hasRole('LECTURE'))
+                <h3 class="card-title">Estadísticas de todas las evidencias</h3>
+                @endif
             </div>
 
             <div class="card-body pb-0">
