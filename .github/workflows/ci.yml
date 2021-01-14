@@ -30,7 +30,6 @@ jobs:
         run: |
           composer install --no-scripts
           composer update
-          composer require laravel/passport "~9.0"
 
       - name: Prepare Laravel Application
         run: |
