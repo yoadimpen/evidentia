@@ -25,6 +25,7 @@
                             <th>ID</th>
                             <th>Título</th>
                             <th>Descripción</th>
+                            <th>Fecha</th>
                             <th>Opciones</th>
                         </tr>
                         </thead>
@@ -34,6 +35,7 @@
                             <tr>
                                 <td>{{$note->id}}</td>
                                 <td>{{$note->title}}</td>
+                                <td>{{$note->date}}</td>
                                 <td>{{$note->description}}</td>
                                 <td>
 
