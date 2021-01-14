@@ -37,6 +37,7 @@
             <div class="card-body pb-0">
 
                     <div class="row">
+                         {{-- presidente, secretario y coordinadores son estudiantes --}}
                         @if(Auth::user()->hasRole('STUDENT'))
                         <div class="col-lg-6 col-sm-12">
                             <x-infoevidencetotalcount :user="Auth::user()" />
