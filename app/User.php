@@ -339,4 +339,9 @@ class User extends Authenticatable
        return $this->hasMany('App\Contact');
    }
 
+    //valoraciones
+    public function valorations(){
+        return $this->hasMany('App\Valoration');
+    }
+
 }

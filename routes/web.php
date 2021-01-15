@@ -359,4 +359,16 @@ Route::group(['prefix' => '{instance}', 'middleware' => ['checkblock']], functio
         //Eliminar un contacto
         Route::post('remove', 'ContactController@remove')->name('contact.remove');
     });
+
+
+    // Listar las valoraciones
+    Route::get('valoration/list', 'ValorationController@list')->name('valoration.list');
+    // Crear una valoracion
+    Route::get('valoration/create', 'ValorationController@create')->name('valoration.create');
+    Route::post('valoration/new', 'ValorationController@new')->name('valoration.new');
+    // Editar una valoracion
+    Route::get('valoration/edit/{id}', 'ValorationController@edit')->name('valoration.edit');
+    Route::post('valoration/save', 'ValorationController@save')->name('valoration.save');
+    // Eliminar una valoracion
+    Route::post('valoration/remove', 'ValorationController@remove')->name('valoration.remove');
 });
