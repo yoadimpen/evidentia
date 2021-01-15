@@ -40,7 +40,7 @@
                                 <td>{{$valoration->description}}</td>
                                 <td>{{$valoration->date}}</td>
                                 <td>{{$valoration->qualification}}</td>
-                                
+                                <td>
                                 
 
 
