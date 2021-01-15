@@ -44,7 +44,7 @@ class BonusSecretaryController extends Controller
 
         $request->validate([
             'reason' => 'required|min:5|max:255',
-            'hours' => 'required|numeric|between:0.5,99.99|max:100',
+            'hours' => 'required|numeric|between:0.5,35|max:35.01',
             'users' => 'required|array|min:1'
         ]);
 
@@ -89,7 +89,7 @@ class BonusSecretaryController extends Controller
 
         $request->validate([
             'reason' => 'required|min:5|max:255',
-            'hours' => 'required|numeric|between:0.5,99.99|max:100'
+            'hours' => 'required|numeric|between:0.5,35|max:35.01'
         ]);
 
         $bonus = Bonus::find($request->_id);

@@ -365,6 +365,17 @@ Route::group(['prefix' => '{instance}', 'middleware' => ['checkblock']], functio
         Route::post('/update_p/{token}','PasswordResetController@update_p')->name('password.update_p');
     });
 
+    // Listar las incidencias
+    Route::get('incident/list', 'IncidentController@list')->name('incident.list');
+    // Crear una incidencia
+    Route::get('incident/create', 'IncidentController@create')->name('incident.create');
+    Route::post('incident/new', 'IncidentController@new')->name('incident.new');
+    // Editar una incidencia
+    Route::get('incident/edit/{id}', 'IncidentController@edit')->name('incident.edit');
+    Route::post('incident/save', 'IncidentController@save')->name('incident.save');
+    // Eliminar una incidencia
+    Route::post('incident/remove', 'IncidentController@remove')->name('incident.remove');
+
     // Listar las notas
     Route::get('note/list', 'NoteController@list')->name('note.list');
     // Crear una nota
@@ -376,4 +387,31 @@ Route::group(['prefix' => '{instance}', 'middleware' => ['checkblock']], functio
     // Eliminar una nota
     Route::post('note/remove', 'NoteController@remove')->name('note.remove');
 
+    /*
+        AGENDA DE CONTACTOS
+    */
+    Route::prefix('contact')->group(function(){
+        //Listar los contactos
+        Route::get('list', 'ContactController@list')->name('contact.list');
+        //Crear un contacto
+        Route::get('create', 'ContactController@create')->name('contact.create');
+        Route::post('new', 'ContactController@new')->name('contact.new');
+        //Editar un contacto
+        Route::get('edit/{id}', 'ContactController@edit')->name('contact.edit');
+        Route::post('save', 'ContactController@save')->name('contact.save');
+        //Eliminar un contacto
+        Route::post('remove', 'ContactController@remove')->name('contact.remove');
+    });
+
+
+    // Listar las valoraciones
+    Route::get('valoration/list', 'ValorationController@list')->name('valoration.list');
+    // Crear una valoracion
+    Route::get('valoration/create', 'ValorationController@create')->name('valoration.create');
+    Route::post('valoration/new', 'ValorationController@new')->name('valoration.new');
+    // Editar una valoracion
+    Route::get('valoration/edit/{id}', 'ValorationController@edit')->name('valoration.edit');
+    Route::post('valoration/save', 'ValorationController@save')->name('valoration.save');
+    // Eliminar una valoracion
+    Route::post('valoration/remove', 'ValorationController@remove')->name('valoration.remove');
 });

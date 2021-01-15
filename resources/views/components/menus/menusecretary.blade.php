@@ -6,7 +6,6 @@
             <li class="nav-header">REUNIONES Y BONOS</li>
             @if(!\Carbon\Carbon::now()->gt(\Config::meetings_timestamp()))
             <x-li route="secretary.meetingplanning.create" icon='far fa-handshake' name="Crear planificación"/>
-            <x-li route="secretary.meeting.create" icon='far fa-handshake' name="Crear reunión"/>
             @endif
             <x-li route="secretary.meetingplanning.list" secondaries="secretary.meetingplanning.edit" icon='fas fa-pen-square' name="Gestionar planificaciones"/>
             <x-li route="secretary.meeting.list" secondaries="secretary.meeting.edit" icon='fas fa-pen-square' name="Gestionar reuniones"/>

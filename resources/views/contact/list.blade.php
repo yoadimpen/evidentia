@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
-@section('title', 'Mis notas')
+@section('title', 'Mis contactos')
 
-@section('title-icon', 'fas fa-sticky-note')
+@section('title-icon', 'fas fa-address-book')
 
 @section('breadcrumb')
     <li class="breadcrumb-item"><a href="/{{\Instantiation::instance()}}">Home</a></li>
@@ -23,30 +23,34 @@
                         <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Título</th>
-                            <th>Descripción</th>
-                            <th>Fecha</th>
+                            <th>Nombre</th>
+                            <th>Apellidos</th>
+                            <th>Teléfono</th>
+                            <th>Email</th>
+                            <th>Empresa</th>
                             <th>Opciones</th>
                         </tr>
                         </thead>
                         <tbody>
 
-                        @foreach($notes as $note)
+                        @foreach($contacts as $contact)
                             <tr>
-                                <td>{{$note->id}}</td>
-                                <td>{{$note->title}}</td>
-                                <td>{{$note->date}}</td>
-                                <td>{{$note->description}}</td>
+                                <td>{{$contact->id}}</td>
+                                <td>{{$contact->name}}</td>
+                                <td>{{$contact->surname}}</td>
+                                <td>{{$contact->phone}}</td>
+                                <td>{{$contact->email}}</td>
+                                <td>{{$contact->company}}</td>
                                 <td>
 
                                     <a class="btn btn-info btn-sm"
-                                       href="{{route('note.edit',['instance' => \Instantiation::instance(), 'id'=> $note->id])}}">
+                                       href="{{route('contact.edit',['instance' => \Instantiation::instance(), 'id'=> $contact->id])}}">
                                         <i class="fas fa-pencil-alt">
                                         </i>
                                         <span class="d-none d-sm-none d-md-none d-lg-inline">Editar</span>
                                     </a>
 
-                                    <x-buttonconfirm :id="$note->id" route="note.remove" title="¿Seguro?" description="Esto borrará la nota por completo" type="REMOVE" />
+                                    <x-buttonconfirm :id="$contact->id" route="contact.remove" title="¿Seguro?" description="Esto borrará el contacto por completo" type="REMOVE" />
 
 
                                 </td>

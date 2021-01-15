@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
-@section('title', 'Mis notas')
+@section('title', 'Mis valoraciones')
 
-@section('title-icon', 'fas fa-sticky-note')
+@section('title-icon', 'fas fa-clipboard')
 
 @section('breadcrumb')
     <li class="breadcrumb-item"><a href="/{{\Instantiation::instance()}}">Home</a></li>
@@ -26,27 +26,33 @@
                             <th>Título</th>
                             <th>Descripción</th>
                             <th>Fecha</th>
-                            <th>Opciones</th>
+                            
+                            
+                            
                         </tr>
                         </thead>
                         <tbody>
 
-                        @foreach($notes as $note)
+                        @foreach($valorations as $valoration)
                             <tr>
-                                <td>{{$note->id}}</td>
-                                <td>{{$note->title}}</td>
-                                <td>{{$note->date}}</td>
-                                <td>{{$note->description}}</td>
+                                <td>{{$valoration->id}}</td>
+                                <td>{{$valoration->title}}</td>
+                                <td>{{$valoration->description}}</td>
+                                <td>{{$valoration->date}}</td>
+                                <td>{{$valoration->qualification}}</td>
                                 <td>
+                                
+
+
 
                                     <a class="btn btn-info btn-sm"
-                                       href="{{route('note.edit',['instance' => \Instantiation::instance(), 'id'=> $note->id])}}">
+                                       href="{{route('valoration.edit',['instance' => \Instantiation::instance(), 'id'=> $valoration->id])}}">
                                         <i class="fas fa-pencil-alt">
                                         </i>
                                         <span class="d-none d-sm-none d-md-none d-lg-inline">Editar</span>
                                     </a>
 
-                                    <x-buttonconfirm :id="$note->id" route="note.remove" title="¿Seguro?" description="Esto borrará la nota por completo" type="REMOVE" />
+                                    <x-buttonconfirm :id="$valoration->id" route="valoration.remove" title="¿Seguro?" description="Esto borrará la valoración por completo" type="REMOVE" />
 
 
                                 </td>

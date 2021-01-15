@@ -490,12 +490,52 @@ class DevelopSeeder extends Seeder
             'secret' => Str::random(10),
         ]);
 
-        DB::table('notes')->insert([
+        /*
+         *  INCIDENTES
+         */
+
+        DB::table('incidents')->insert([
             'user_id' => 1,
             'title' => "Esto es un título",
             'description' => "Esto es una descripción",
+            'date' => "29/12/2020",
+            'solution' => "Esto es una solución",
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+        ]);
+
+        /*
+         *  NOTAS
+         */
+
+        DB::table('notes')->insert([
+            'user_id' => 1,
+            'title' => "Esto es un título",
+            'date' => "13/01/2021",
+            'description' => "Esto es una descripción",
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+        ]);
+
+        DB::table('contacts')->insert([
+            'user_id' => 1,
+            'name' => "Lexa",
+            'surname' => "Commander",
+            'phone' => "+34 999 99 99 99",
+            'email' => "lexa@trikru.com",
+            'company' => "Trikru"
+        ]);
+
+        DB::table('valorations')->insert([
+            'user_id' => 1,
+            'title' => "Esto es un título",
+            'comittee_id' => 8,
+            'description' => "Esto es una descripción",
+            'date' => "13/01/2021",
+            'qualification' => 2,
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            
         ]);
 
     }

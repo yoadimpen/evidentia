@@ -4,20 +4,14 @@
              alt="User Image">
     </div>
     <div class="info" style="margin: 6px 0px">
-        <a href="#">
+    <a>
+        <span style="font-size: 14px; display: block; line-height : 15px;">
+            {!! Auth::user()->surname!!}
+        </span>
 
-            <span style="font-size: 14px; display: block; line-height : 15px;">
-                {!! Auth::user()->surname!!}
-            </span>
-
-            <span style="font-size: 16px; display: block; line-height : 15px;">
-            {!!Auth::user()->name!!}
-</span>
-
-</a>
-
-
-
-
+        <span style="font-size: 16px; display: block; line-height : 15px;">
+        {!!Auth::user()->name!!}
+        </span>
+    </a>
 </div>
 </div>

@@ -46,6 +46,15 @@
 
                         <div class="form-row">
 
+                            <x-input col="6" attr="date" :value="$note->date ?? ''"
+                                        label="Fecha de la nota"
+                                        description="Escribe la fecha de la nota."
+                            />
+
+                        </div>
+
+                        <div class="form-row">
+
                             <x-textarea col="6" attr="description" :value="$note->description ?? ''"
                                         label="Descripción de la nota"
                                         description="Escribe una descripción concisa de la nota."
