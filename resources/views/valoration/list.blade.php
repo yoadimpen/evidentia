@@ -26,8 +26,9 @@
                             <th>Título</th>
                             <th>Descripción</th>
                             <th>Fecha</th>
-                            <th>Calificación</th>
-                            <th>Comité</th>
+                            
+                            
+                            
                         </tr>
                         </thead>
                         <tbody>
@@ -40,6 +41,9 @@
                                 <td>{{$valoration->date}}</td>
                                 <td>{{$valoration->qualification}}</td>
                                 
+                                
+
+
 
                                     <a class="btn btn-info btn-sm"
                                        href="{{route('valoration.edit',['instance' => \Instantiation::instance(), 'id'=> $valoration->id])}}">
