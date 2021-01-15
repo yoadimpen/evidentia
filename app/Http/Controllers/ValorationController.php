@@ -31,7 +31,7 @@ class ValorationController extends Controller
     public function new(Request $request)
     {
         $request->validate([
-            'title' => 'required|min:5|max:10',
+            'title' => 'required|min:5|max:255',
             'description' => 'required',new MinCharacters(10),new MaxCharacters(20000),
             'date' => 'required|',
             'qualification' =>' required|numeric|between:0,5|max:5',
@@ -66,7 +66,7 @@ class ValorationController extends Controller
     {
         $user = Auth::user();
         $request->validate([
-            'title' => 'required|min:5|max:10',
+            'title' => 'required|min:5|max:255',
             'description' => 'required',new MinCharacters(10),new MaxCharacters(20000),
             'date' => 'required|',
             'qualification' =>'required|numeric|between:0,5|max:5',
