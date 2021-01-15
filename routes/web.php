@@ -224,6 +224,7 @@ Route::group(['prefix' => '{instance}', 'middleware' => ['checkblock']], functio
         Route::middleware(['checknotnull:MeetingPlanning','checkregistermeetingplannings'])->group(function () {
           Route::get('/meetingplanning/edit/{id}', 'MeetingPlanningSecretaryController@edit')->name('secretary.meetingplanning.edit');
           Route::post('/meetingplanning/save', 'MeetingPlanningSecretaryController@save')->name('secretary.meetingplanning.save');
+          Route::post('/meetingplanning/remove', 'MeetingPlanningSecretaryController@remove')->name('secretary.meetingplanning.remove');
         });
 
     });

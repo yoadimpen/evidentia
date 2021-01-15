@@ -134,5 +134,14 @@ class MeetingPlanningSecretaryController extends Controller
 
  }
 
+ public function remove(Request $request)
+ {
+     $meetingplanning = MeetingPlanning::find($request->_id);
+     $instance = \Instantiation::instance();
+
+     $meetingplanning->delete();
+
+     return redirect()->route('secretary.meetingplanning.list',$instance)->with('success', 'Planificación eliminada con éxito.');
+ }
 
 }

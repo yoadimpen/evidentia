@@ -51,7 +51,7 @@
                                             <span class="d-none d-sm-none d-md-none d-lg-inline">Editar planificación</span>
                                         </a>
 
-
+                                        <x-buttonconfirm :id="$meetingplanning->id" route="secretary.meetingplanning.remove" title="¿Seguro?" description="La planificación de reunión se borrará." type="REMOVE" />
 
                                     </td>
                                     @endif
