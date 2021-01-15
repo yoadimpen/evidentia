@@ -35,7 +35,7 @@ class ValorationController extends Controller
             'equipo'=> 'required',new MinCharacters(10),new MaxCharacters(20000),
             'description' => 'required',new MinCharacters(10),new MaxCharacters(20000),
             'date' => 'required|',
-            'qualification' =>' required|',
+            'qualification' =>' required|numeric|between:0,5|max:5',
         ]);
 
         $user = Auth::user();
@@ -72,7 +72,7 @@ class ValorationController extends Controller
             'equipo'=> 'required',new MinCharacters(10),new MaxCharacters(20000),
             'description' => 'required',new MinCharacters(10),new MaxCharacters(20000),
             'date' => 'required|',
-            'qualification' =>' required|',
+            'qualification' =>'required|numeric|between:0,5|max:5',
             ]);
 
         $user = Auth::user();
