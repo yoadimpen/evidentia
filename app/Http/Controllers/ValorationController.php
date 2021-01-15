@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Rules\MaxCharacters;
+use App\Rules\MinCharacters;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Valoration;
 
 class ValorationController extends Controller
 {
@@ -36,7 +40,7 @@ class ValorationController extends Controller
             'title' => $request->input('title'),
             'date' => $request->input('date'),
             'description' => $request->input('description'),
-            'qualification' => $request->input('qualification')
+            'qualification' => $request->input('qualification'),
         ]);
         $valoration->save();
 

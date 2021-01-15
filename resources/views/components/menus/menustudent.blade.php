@@ -21,6 +21,9 @@
             <x-li route="contact.create" icon='far fa-address-book' name="Crear contacto"/>
             <x-li route="contact.list" icon='fas fa-address-book' name="Mis contactos"/>
 
+            <x-li route="valoration.create" icon='far fa-clipboard' name="Crear valoración"/>
+            <x-li route="valoration.list" icon='fas fa-clipboard' name="Mis valoraciones"/>
+
         </ul>
     </nav>
 @endif
