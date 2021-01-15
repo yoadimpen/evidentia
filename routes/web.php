@@ -188,6 +188,49 @@ Route::group(['prefix' => '{instance}', 'middleware' => ['checkblock']], functio
     });
 
     /**
+     *  MEETING Plannings
+     */
+
+    Route::get('/meetingplanning/list/', 'MeetingPlanningController@list')->name('meetingplanning.list');
+
+    Route::prefix('secretary')->group(function () {
+
+        /*
+         *  DEFAULT LISTS
+         */
+       Route::get('/defaultlist/list/', 'DefaultListSecretaryController@list')->name('secretary.defaultlist.list');
+       Route::get('/defaultlist/list/create', 'DefaultListSecretaryController@create')->name('secretary.defaultlist.create');
+       Route::post('/defaultlist/list/new', 'DefaultListSecretaryController@new')->name('secretary.defaultlist.new');
+
+       Route::middleware(['checknotnull:DefaultList'])->group(function () {
+           Route::get('/defaultlist/edit/{id}', 'DefaultListSecretaryController@edit')->name('secretary.defaultlist.edit');
+           Route::post('/defaultlist/save', 'DefaultListSecretaryController@save')->name('secretary.defaultlist.save');
+           Route::post('/defaultlist/remove', 'DefaultListSecretaryController@remove')->name('secretary.defaultlist.remove');
+       });
+
+        /*
+         * MEETINGS
+         */
+        Route::get('/meetingplanning/list/', 'MeetingPlanningSecretaryController@list')->name('secretary.meetingplanning.list');
+
+        Route::middleware(['checkregistermeetingplannings'])->group(function () {
+          Route::get('/meetingplanning/create/', 'MeetingPlanningSecretaryController@create')->name('secretary.meetingplanning.create');
+          Route::post('/meetingplanning/new', 'MeetingPlanningSecretaryController@new')->name('secretary.meetingplanning.new');
+        });
+
+        // Consulta AJAX
+        Route::get('/meetingplanning/defaultlist/{id}', 'MeetingPlanningSecretaryController@defaultlist')->name('secretary.meetingplanning.defaultlist');
+
+        Route::middleware(['checknotnull:MeetingPlanning','checkregistermeetingplannings'])->group(function () {
+          Route::get('/meetingplanning/edit/{id}', 'MeetingPlanningSecretaryController@edit')->name('secretary.meetingplanning.edit');
+          Route::post('/meetingplanning/save', 'MeetingPlanningSecretaryController@save')->name('secretary.meetingplanning.save');
+          Route::post('/meetingplanning/remove', 'MeetingPlanningSecretaryController@remove')->name('secretary.meetingplanning.remove');
+        });
+
+    });
+
+
+    /**
      *  ATTENDEES
      */
     Route::get('/attendee/list/', 'AttendeeController@list')->name('attendee.list');
