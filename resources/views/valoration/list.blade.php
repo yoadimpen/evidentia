@@ -26,6 +26,7 @@
                             <th>Título</th>
                             <th>Descripción</th>
                             <th>Fecha</th>
+                            <th>Calificación</th>
                             
                             
                             
