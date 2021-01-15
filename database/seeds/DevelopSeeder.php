@@ -529,6 +529,8 @@ class DevelopSeeder extends Seeder
         DB::table('valorations')->insert([
             'user_id' => 1,
             'title' => "Esto es un título",
+            'equipo'=>"Articuno",
+            'comittee_id' => 8,
             'description' => "Esto es una descripción",
             'date' => "13/01/2021",
             'qualification' => 2,

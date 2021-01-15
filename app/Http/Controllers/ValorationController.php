@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Comittee;
 use App\Rules\MaxCharacters;
 use App\Rules\MinCharacters;
 use Illuminate\Http\Request;
@@ -22,13 +23,15 @@ class ValorationController extends Controller
 
     public function create()
     {
-        return view('valoration.createandedit');
+        $comittees = Comittee::all();
+        return view('valoration.createandedit',['comittees' => $comittees]);
     }
 
     public function new(Request $request)
     {
         $request->validate([
             'title' => 'required|min:5|max:255',
+            'equipo'=> 'required',new MinCharacters(10),new MaxCharacters(20000),
             'description' => 'required',new MinCharacters(10),new MaxCharacters(20000),
             'date' => 'required|',
             'qualification' =>' required|numeric|between:0,5|max:5',
@@ -38,9 +41,11 @@ class ValorationController extends Controller
         $valoration = Valoration::create([
             'user_id' => $user->id,
             'title' => $request->input('title'),
+            'equipo'=>$request->input('equipo'),
             'date' => $request->input('date'),
             'description' => $request->input('description'),
             'qualification' => $request->input('qualification'),
+            'comittee_id' => $request->input('comittee')
         ]);
         $valoration->save();
 

@@ -27,6 +27,7 @@
                             <th>Descripción</th>
                             <th>Fecha</th>
                             <th>Calificación</th>
+                            <th>Comité</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -38,6 +39,8 @@
                                 <td>{{$valoration->description}}</td>
                                 <td>{{$valoration->date}}</td>
                                 <td>{{$valoration->qualification}}</td>
+                                <td class="d-none d-sm-none d-md-table-cell d-lg-table-cell">
+                                    <x-valorationcomittee :valoration="$valoration"/>
                                 <td>
 
                                     <a class="btn btn-info btn-sm"

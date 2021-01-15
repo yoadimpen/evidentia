@@ -49,6 +49,39 @@
 
                         <div class="form-row">
 
+                            <x-textarea col="6" attr="equipo" :value="$valoration->equipo ?? ''"
+                                        label="Equipo"
+                                        description="Escribe tu equipo para la valoración."
+                            />
+
+                        </div>
+
+                        <div class="form-group col-md-3">
+                                <label for="comittee">Comité asociado</label>
+                                <select id="comittee" class="selectpicker form-control @error('comittee') is-invalid @enderror" name="comittee" value="{{ old('comittee') }}" required autofocus>
+                                    @foreach($comittees as $comittee)
+                                        @isset($evidence)
+                                            <option {{$comittee->id == old('comittee') || $valoration->comittee->id == $comittee->id ? 'selected' : ''}} value="{{$comittee->id}}">
+                                        @else
+                                            <option {{$comittee->id == old('comittee') ? 'selected' : ''}} value="{{$comittee->id}}">
+                                        @endisset
+                                            {!! $comittee->name !!}
+                                        </option>
+                                    @endforeach
+                                </select>
+
+                                <small class="form-text text-muted">Elige un comité al que perteneces.</small>
+
+                                @error('comite')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+
+
+                        <div class="form-row">
+
                             <x-textarea col="6" attr="description" :value="$valoration->description ?? ''"
                                         label="Descripción de la valoración"
                                         description="Escribe una descripción concisa de la valoración."
@@ -64,11 +97,11 @@
                             />
 
                         </div>
-
                         <div class="form-row">
 
                         <x-input col="6" attr="qualification" :value="$valoration->qualification ?? ''" type="number" step="0.01" label="Calificación" description="Números enteros o decimales."/>
                             
+
 
                         </div>
 

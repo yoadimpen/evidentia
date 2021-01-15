@@ -8,7 +8,7 @@ class Valoration extends Model
 {
     protected $table = "valorations";
 
-    protected $fillable = ["user_id", "title", "description", "date", "qualification"];
+    protected $fillable = ["user_id", "title",  "equipo", 'comittee_id',"description","date", "qualification"];
 
     public function user()
     {
