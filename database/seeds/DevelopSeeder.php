@@ -526,5 +526,16 @@ class DevelopSeeder extends Seeder
             'company' => "Trikru"
         ]);
 
+        DB::table('valorations')->insert([
+            'user_id' => 1,
+            'title' => "Esto es un título",
+            'description' => "Esto es una descripción",
+            'date' => "13/01/2021",
+            'qualification' => 2,
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            
+        ]);
+
     }
 }
