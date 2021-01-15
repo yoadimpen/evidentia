@@ -47,15 +47,6 @@
 
                         </div>
 
-                        <div class="form-row">
-
-                            <x-textarea col="6" attr="equipo" :value="$valoration->equipo ?? ''"
-                                        label="Equipo"
-                                        description="Escribe tu equipo para la valoración."
-                            />
-
-                        </div>
-
                         <div class="form-group col-md-3">
                                 <label for="comittee">Comité asociado</label>
                                 <select id="comittee" class="selectpicker form-control @error('comittee') is-invalid @enderror" name="comittee" value="{{ old('comittee') }}" required autofocus>
