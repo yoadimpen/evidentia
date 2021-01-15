@@ -194,6 +194,11 @@ class Config
         return self::config_entity()->meetings_timestamp;
     }
 
+    public static function meetingplannings_timestamp()
+    {
+        return self::config_entity()->meetingplannings_timestamp;
+    }
+
     public static function bonus_timestamp()
     {
         return self::config_entity()->bonus_timestamp;
