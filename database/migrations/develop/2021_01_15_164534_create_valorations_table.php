@@ -17,7 +17,6 @@ class CreateValorationsTable extends Migration
             $table->id();
             $table->foreignId('user_id');
             $table->string('title');
-            $table->string('equipo');
             $table->foreignId('comittee_id');
             $table->string('description');
             $table->date('date');
