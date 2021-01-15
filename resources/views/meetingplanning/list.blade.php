@@ -30,7 +30,6 @@
                             <tr>
                                 <th>Planificación de Reunión</th>
                                 <th class="d-none d-sm-none d-md-table-cell d-lg-table-cell">Lugar</th>
-                                <th>Horas</th>
                                 <th class="d-none d-sm-none d-md-table-cell d-lg-table-cell">Realizada</th>
                                 @if(!\Carbon\Carbon::now()->gt(\Config::meetings_timestamp()))
                                 <th>Herramientas</th>
@@ -43,7 +42,19 @@
                                     <td>{{$meetingplanning->title}}</td>
                                     <td class="d-none d-sm-none d-md-table-cell d-lg-table-cell">{{$meetingplanning->place}}</td>
                                     <td class="d-none d-sm-none d-md-table-cell d-lg-table-cell">{{ \Carbon\Carbon::parse($meetingplanning->datetime)->diffForHumans() }}</td>
+                                    @if(!\Carbon\Carbon::now()->gt(\Config::meetings_timestamp()))
+                                    <td>
+                                        <a class="btn btn-primary btn-sm"
+                                           href="{{route('secretary.meetingplanning.edit',['instance' => $instance, 'id' => $meetingplanning->id])}}"
+                                           role="button">
+                                            <i class="far fa-edit"></i>
+                                            <span class="d-none d-sm-none d-md-none d-lg-inline">Editar planificación</span>
+                                        </a>
 
+
+
+                                    </td>
+                                    @endif
                                 </tr>
                             @endforeach
                             </tbody>

@@ -77,6 +77,16 @@ class MeetingPlanningSecretaryController extends Controller
 
  }
 
+ public function edit($instance,$id)
+ {
+     $meetingplanning = MeetingPlanning::find($id);
+     $users = User::orderBy('surname')->get();
+     $defaultlists = Auth::user()->secretary->default_lists;
+
+     return view('meetingplanning.createandedit',
+         ['instance' => $instance, 'meetingplanning' => $meetingplanning, 'edit' => true, 'users' => $users, 'defaultlists' => $defaultlists, 'route' => route('secretary.meetingplanning.save',$instance)]);
+ }
+
  public function defaultlist($instance,$id)
  {
      return DefaultList::find($id)->users;

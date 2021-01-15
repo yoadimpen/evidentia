@@ -214,15 +214,16 @@ Route::group(['prefix' => '{instance}', 'middleware' => ['checkblock']], functio
         Route::get('/meetingplanning/list/', 'MeetingPlanningSecretaryController@list')->name('secretary.meetingplanning.list');
 
         Route::middleware(['checkregistermeetingplannings'])->group(function () {
-           Route::get('/meetingplanning/create/', 'MeetingPlanningSecretaryController@create')->name('secretary.meetingplanning.create');
-           Route::post('/meetingplanning/new', 'MeetingPlanningSecretaryController@new')->name('secretary.meetingplanning.new');
+          Route::get('/meetingplanning/create/', 'MeetingPlanningSecretaryController@create')->name('secretary.meetingplanning.create');
+          Route::post('/meetingplanning/new', 'MeetingPlanningSecretaryController@new')->name('secretary.meetingplanning.new');
         });
 
         // Consulta AJAX
         Route::get('/meetingplanning/defaultlist/{id}', 'MeetingPlanningSecretaryController@defaultlist')->name('secretary.meetingplanning.defaultlist');
 
         Route::middleware(['checknotnull:MeetingPlanning','checkregistermeetingplannings'])->group(function () {
-            Route::post('/meetingplanning/save', 'MeetingPlanningSecretaryController@save')->name('secretary.meetingplanning.save');
+          Route::get('/meetingplanning/edit/{id}', 'MeetingPlanningSecretaryController@edit')->name('secretary.meetingplanning.edit');
+          Route::post('/meetingplanning/save', 'MeetingPlanningSecretaryController@save')->name('secretary.meetingplanning.save');
         });
 
     });

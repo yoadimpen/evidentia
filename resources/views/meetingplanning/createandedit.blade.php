@@ -165,7 +165,7 @@
 
                         <div class="form-row">
                             <div class="col-lg-3 mt-1">
-                                <button type="submit"  class="btn btn-primary btn-block">Guardar reunión</button>
+                                <button type="submit"  class="btn btn-primary btn-block">Guardar planificación</button>
                             </div>
                         </div>
 
