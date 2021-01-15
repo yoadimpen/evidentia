@@ -8,6 +8,7 @@ use App\Rules\MinCharacters;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Valoration;
+use App\User;
 
 class ValorationController extends Controller
 {
@@ -30,11 +31,11 @@ class ValorationController extends Controller
     public function new(Request $request)
     {
         $request->validate([
-            'title' => 'required|min:5|max:255',
+            'title' => 'required|min:5|max:10',
             'equipo'=> 'required',new MinCharacters(10),new MaxCharacters(20000),
             'description' => 'required',new MinCharacters(10),new MaxCharacters(20000),
             'date' => 'required|',
-            'qualification' =>' required|numeric|between:0,5|max:5',
+            'qualification' =>' required|',
         ]);
 
         $user = Auth::user();
@@ -57,19 +58,22 @@ class ValorationController extends Controller
 
     public function edit($instance, $id)
     {
+        $user = Auth::user();
         $valoration = Valoration::find($id);
-        return view('valoration.createandedit',['valoration' => $valoration, 'edit' => true]);
+        $comittees = Comittee::all();
+        return view('valoration.createandedit',['valoration' => $valoration,'comittees' => $comittees, 'edit' => true]);
     }
 
     public function save(Request $request)
     {
+        $user = Auth::user();
         $request->validate([
-            'user_id' => $user->id,
-            'title' => $request->input('title'),
-            'date' => $request->input('date'),
-            'description' => $request->input('description'),
-            'qualification' => $request->input('qualification')
-        ]);
+            'title' => 'required|min:5|max:10',
+            'equipo'=> 'required',new MinCharacters(10),new MaxCharacters(20000),
+            'description' => 'required',new MinCharacters(10),new MaxCharacters(20000),
+            'date' => 'required|',
+            'qualification' =>' required|',
+            ]);
 
         $user = Auth::user();
 
