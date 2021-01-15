@@ -74,4 +74,52 @@ class EvidenceTest extends TestCase
         ($response->assertSessionHasNoErrors())==false;
     }
 
+    public function testUpdateEvidence(){
+
+        $this->testAlumnoLoginTrue();
+
+        $request = [
+            'title' => 'Evidencia', 
+            'description' => 'Evidencia actualizada', 
+            'hours' => '5',
+            'comittee_id' => '5'
+        ];
+
+        $response = $this->post('/contact/save',$request);
+
+        $response->assertStatus(302);
+
+    }
+
+    public function testUpdateEvidenceDescriptionError(){
+
+        $this->testAlumnoLoginTrue();
+
+        $request = [
+            'title' => 'Evidencia', 
+            'description' => 'Error', 
+            'hours' => '5',
+            'comittee_id' => '5'
+        ];
+
+        $response = $this->post('/contact/save',$request);
+
+        ($response->assertSessionHasNoErrors())==false;
+
+    }
+
+    public function testDeleteEvidence(){
+
+        $this->testAlumnoLoginTrue();
+
+        $request = [
+            'id' => '1'
+        ];
+
+        $response = $this->post('/contact/remove',$request);
+
+        $response->assertStatus(302);
+
+    }
+
 }
