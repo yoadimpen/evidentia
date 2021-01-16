@@ -38,6 +38,6 @@ class MinCharacters implements Rule
      */
     public function message()
     {
-        return 'Debe tener un mínimo de '.$this->min.' caracteres.';
+        return 'La descripción debe tener un mínimo de '.$this->min.' caracteres.';
     }
 }

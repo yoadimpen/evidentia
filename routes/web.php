@@ -188,6 +188,49 @@ Route::group(['prefix' => '{instance}', 'middleware' => ['checkblock']], functio
     });
 
     /**
+     *  MEETING Plannings
+     */
+
+    Route::get('/meetingplanning/list/', 'MeetingPlanningController@list')->name('meetingplanning.list');
+
+    Route::prefix('secretary')->group(function () {
+
+        /*
+         *  DEFAULT LISTS
+         */
+       Route::get('/defaultlist/list/', 'DefaultListSecretaryController@list')->name('secretary.defaultlist.list');
+       Route::get('/defaultlist/list/create', 'DefaultListSecretaryController@create')->name('secretary.defaultlist.create');
+       Route::post('/defaultlist/list/new', 'DefaultListSecretaryController@new')->name('secretary.defaultlist.new');
+
+       Route::middleware(['checknotnull:DefaultList'])->group(function () {
+           Route::get('/defaultlist/edit/{id}', 'DefaultListSecretaryController@edit')->name('secretary.defaultlist.edit');
+           Route::post('/defaultlist/save', 'DefaultListSecretaryController@save')->name('secretary.defaultlist.save');
+           Route::post('/defaultlist/remove', 'DefaultListSecretaryController@remove')->name('secretary.defaultlist.remove');
+       });
+
+        /*
+         * MEETINGS
+         */
+        Route::get('/meetingplanning/list/', 'MeetingPlanningSecretaryController@list')->name('secretary.meetingplanning.list');
+
+        Route::middleware(['checkregistermeetingplannings'])->group(function () {
+          Route::get('/meetingplanning/create/', 'MeetingPlanningSecretaryController@create')->name('secretary.meetingplanning.create');
+          Route::post('/meetingplanning/new', 'MeetingPlanningSecretaryController@new')->name('secretary.meetingplanning.new');
+        });
+
+        // Consulta AJAX
+        Route::get('/meetingplanning/defaultlist/{id}', 'MeetingPlanningSecretaryController@defaultlist')->name('secretary.meetingplanning.defaultlist');
+
+        Route::middleware(['checknotnull:MeetingPlanning','checkregistermeetingplannings'])->group(function () {
+          Route::get('/meetingplanning/edit/{id}', 'MeetingPlanningSecretaryController@edit')->name('secretary.meetingplanning.edit');
+          Route::post('/meetingplanning/save', 'MeetingPlanningSecretaryController@save')->name('secretary.meetingplanning.save');
+          Route::post('/meetingplanning/remove', 'MeetingPlanningSecretaryController@remove')->name('secretary.meetingplanning.remove');
+        });
+
+    });
+
+
+    /**
      *  ATTENDEES
      */
     Route::get('/attendee/list/', 'AttendeeController@list')->name('attendee.list');
@@ -238,6 +281,7 @@ Route::group(['prefix' => '{instance}', 'middleware' => ['checkblock']], functio
 
     Route::get('/president/user/list','ManagementController@user_list')->name('president.user.list');
     Route::get('/president/evidence/list','ManagementController@evidence_list')->name('president.evidence.list');
+    Route::get('/president/meetingplanning/list','ManagementController@meetingplanning_list')->name('president.meetingplanning.list');
     Route::get('/president/meeting/list','ManagementController@meeting_list')->name('president.meeting.list');
 
     Route::get('/president/comittee/list','ManagementController@comittee_list')->name('president.comittee.list');
@@ -258,6 +302,7 @@ Route::group(['prefix' => '{instance}', 'middleware' => ['checkblock']], functio
      */
     Route::get('/lecture/user/list','ManagementController@user_list')->name('lecture.user.list');
     Route::get('/lecture/evidence/list','ManagementController@evidence_list')->name('lecture.evidence.list');
+    Route::get('/lecture/meetingplanning/list','ManagementController@meetingplanning_list')->name('lecture.meetingplanning.list');
     Route::get('/lecture/meeting/list','ManagementController@meeting_list')->name('lecture.meeting.list');
 
     Route::middleware(['checkroles:LECTURE'])->group(function () {
@@ -322,6 +367,17 @@ Route::group(['prefix' => '{instance}', 'middleware' => ['checkblock']], functio
         Route::post('/update_p/{token}','PasswordResetController@update_p')->name('password.update_p');
     });
 
+    // Listar las incidencias
+    Route::get('incident/list', 'IncidentController@list')->name('incident.list');
+    // Crear una incidencia
+    Route::get('incident/create', 'IncidentController@create')->name('incident.create');
+    Route::post('incident/new', 'IncidentController@new')->name('incident.new');
+    // Editar una incidencia
+    Route::get('incident/edit/{id}', 'IncidentController@edit')->name('incident.edit');
+    Route::post('incident/save', 'IncidentController@save')->name('incident.save');
+    // Eliminar una incidencia
+    Route::post('incident/remove', 'IncidentController@remove')->name('incident.remove');
+
     // Listar las notas
     Route::get('note/list', 'NoteController@list')->name('note.list');
     // Crear una nota
@@ -333,4 +389,31 @@ Route::group(['prefix' => '{instance}', 'middleware' => ['checkblock']], functio
     // Eliminar una nota
     Route::post('note/remove', 'NoteController@remove')->name('note.remove');
 
+    /*
+        AGENDA DE CONTACTOS
+    */
+    Route::prefix('contact')->group(function(){
+        //Listar los contactos
+        Route::get('list', 'ContactController@list')->name('contact.list');
+        //Crear un contacto
+        Route::get('create', 'ContactController@create')->name('contact.create');
+        Route::post('new', 'ContactController@new')->name('contact.new');
+        //Editar un contacto
+        Route::get('edit/{id}', 'ContactController@edit')->name('contact.edit');
+        Route::post('save', 'ContactController@save')->name('contact.save');
+        //Eliminar un contacto
+        Route::post('remove', 'ContactController@remove')->name('contact.remove');
+    });
+
+
+    // Listar las valoraciones
+    Route::get('valoration/list', 'ValorationController@list')->name('valoration.list');
+    // Crear una valoracion
+    Route::get('valoration/create', 'ValorationController@create')->name('valoration.create');
+    Route::post('valoration/new', 'ValorationController@new')->name('valoration.new');
+    // Editar una valoracion
+    Route::get('valoration/edit/{id}', 'ValorationController@edit')->name('valoration.edit');
+    Route::post('valoration/save', 'ValorationController@save')->name('valoration.save');
+    // Eliminar una valoracion
+    Route::post('valoration/remove', 'ValorationController@remove')->name('valoration.remove');
 });

@@ -8,7 +8,7 @@ class Note extends Model
 {
     protected $table = "notes";
 
-    protected $fillable = ["user_id", "title","description"];
+    protected $fillable = ["user_id", "title", "date", "description"];
 
     public function user()
     {

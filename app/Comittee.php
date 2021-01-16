@@ -55,6 +55,11 @@ class Comittee extends Model
         return $this->hasMany('App\Meeting')->orderByDesc('datetime');
     }
 
+    public function meetingplannings()
+    {
+        return $this->hasMany('App\MeetingPlanning')->orderByDesc('datetime');
+    }
+
     public function bonus()
     {
         return $this->hasMany('App\Bonus')->orderByDesc('created_at');
@@ -68,6 +73,7 @@ class Comittee extends Model
          * 1)   No tiene ningún coordinador ni secretario
          * 2)   No tiene evidencias asociadas, sea cual sea su estado
          * 3)   No hay reuniones asociadas
+         * 4)   No hay planificaciones de reuniones asociadas
          */
 
         // 1)
@@ -82,6 +88,11 @@ class Comittee extends Model
 
         // 3)
         if($this->meetings->count() > 0){
+            return false;
+        }
+
+        // 4)
+        if($this->meetingplannings->count() > 0){
             return false;
         }
         return true;

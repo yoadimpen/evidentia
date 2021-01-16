@@ -75,6 +75,11 @@ class User extends Authenticatable
         return $this->belongsToMany('App\Meeting');
     }
 
+    public function meetingplannings()
+    {
+        return $this->belongsToMany('App\MeetingPlanning');
+    }
+
     public function bonus()
     {
         return $this->belongsToMany('App\Bonus');
@@ -324,7 +329,24 @@ class User extends Authenticatable
         return $comittees_names;
     }
 
+    public function incidents()
+    {
+        return $this->hasMany('App\Incident');
+    }
+
+    //Notas
     public function notes(){
         return $this->hasMany('App\Note');
    }
+
+   //Contactos
+   public function contacts(){
+       return $this->hasMany('App\Contact');
+   }
+
+    //valoraciones
+    public function valorations(){
+        return $this->hasMany('App\Valoration');
+    }
+
 }
