@@ -2,7 +2,7 @@
 
 @section('title', 'Mis planificaciones')
 
-@section('title-icon', 'nav-icon fas fa-cocktail')
+@section('title-icon', 'fas fa-calendar-day')
 
 @section('breadcrumb')
     <li class="breadcrumb-item"><a href="/{{$instance}}">Home</a></li>

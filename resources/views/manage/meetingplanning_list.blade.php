@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
-@section('title', 'Gestionar reuniones')
+@section('title', 'Gestionar planificaciones')
 
-@section('title-icon', 'nav-icon far fa-handshake')
+@section('title-icon', 'far fa-calendar-alt')
 
 @section('breadcrumb')
     <li class="breadcrumb-item"><a href="/{{$instance}}">Home</a></li>
@@ -26,7 +26,7 @@
                             <th>Lugar</th>
                             <th class="d-none d-sm-none d-md-table-cell d-lg-table-cell">Comité</th>
                             <th class="d-none d-sm-none d-md-table-cell d-lg-table-cell">Nº de asistentes</th>
-                            <th class="d-none d-sm-none d-md-table-cell d-lg-table-cell">A realizar</th>
+                            <th class="d-none d-sm-none d-md-table-cell d-lg-table-cell">Realizada</th>
                         </tr>
                         </thead>
                         <tbody>
