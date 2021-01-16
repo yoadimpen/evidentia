@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @isset($edit)
-    @section('title', 'Editar reunión: '.$meetingplanning->title)
+    @section('title', 'Editar planificación: '.$meetingplanning->title)
 @else
-    @section('title', 'Crear nueva reunión')
+    @section('title', 'Crear nueva planificación')
 @endisset
 
 @section('title-icon', 'far fa-handshake')
