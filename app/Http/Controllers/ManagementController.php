@@ -6,6 +6,7 @@ use App\Comittee;
 use App\Coordinator;
 use App\Evidence;
 use App\Meeting;
+use App\MeetingPlanning;
 use App\Role;
 use App\Secretary;
 use App\User;
@@ -59,6 +60,15 @@ class ManagementController extends Controller
 
         return view('manage.meeting_list',
             ['instance' => $instance, 'meetings' => $meetings]);
+    }
+
+    public function meetingplanning_list()
+    {
+        $instance = \Instantiation::instance();
+        $meetingplannings = MeetingPlanning::all();
+
+        return view('manage.meetingplanning_list',
+            ['instance' => $instance, 'meetingplannings' => $meetingplannings]);
     }
 
     public function comittee_list()

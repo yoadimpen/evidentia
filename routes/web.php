@@ -281,6 +281,7 @@ Route::group(['prefix' => '{instance}', 'middleware' => ['checkblock']], functio
 
     Route::get('/president/user/list','ManagementController@user_list')->name('president.user.list');
     Route::get('/president/evidence/list','ManagementController@evidence_list')->name('president.evidence.list');
+    Route::get('/president/meetingplanning/list','ManagementController@meetingplanning_list')->name('president.meetingplanning.list');
     Route::get('/president/meeting/list','ManagementController@meeting_list')->name('president.meeting.list');
 
     Route::get('/president/comittee/list','ManagementController@comittee_list')->name('president.comittee.list');
@@ -301,6 +302,7 @@ Route::group(['prefix' => '{instance}', 'middleware' => ['checkblock']], functio
      */
     Route::get('/lecture/user/list','ManagementController@user_list')->name('lecture.user.list');
     Route::get('/lecture/evidence/list','ManagementController@evidence_list')->name('lecture.evidence.list');
+    Route::get('/lecture/meetingplanning/list','ManagementController@meetingplanning_list')->name('lecture.meetingplanning.list');
     Route::get('/lecture/meeting/list','ManagementController@meeting_list')->name('lecture.meeting.list');
 
     Route::middleware(['checkroles:LECTURE'])->group(function () {
