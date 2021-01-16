@@ -20,6 +20,13 @@
 
             <x-status/>
 
+            @if(!\Carbon\Carbon::now()->gt(\Config::meetings_timestamp()))
+            <div class="row mb-3">
+                <div class="col-lg-2 mt-1">
+                    <a href="{{route('secretary.meetingplanning.create',['instance' => $instance])}}" class="btn btn-primary btn-block" role="button"><i class="fas fa-plus"></i> &nbsp;Crear nueva planificación</a>
+                </div>
+            </div>
+            @endif
 
             <div class="card">
 
