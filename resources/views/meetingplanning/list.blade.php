@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Gestionar reuniones')
+@section('title', 'Gestionar planificaciones')
 
 @section('title-icon', 'far fa-list-alt')
 
