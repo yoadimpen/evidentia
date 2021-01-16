@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Mis reuniones')
+@section('title', 'Mis planificaciones')
 
 @section('title-icon', 'nav-icon fas fa-cocktail')
 
