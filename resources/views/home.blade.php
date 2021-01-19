@@ -353,6 +353,41 @@
 
         </div>
 
+        {{-- PETICIÓN DE CAMBIO PARA EL M3 --}}
+        @if(Auth::user()->hasRole('LECTURE'))
+        <div class="card">
+            <div class="card-header bg-dark">
+                <h3 class="card-title">Planificaciones totales</h3>
+            </div>
+            <div class="card-body pb-0">
+                <div class="row">
+                    <div class="col-lg-6 col-sm-12">
+                        <div class="info-box">
+                            <span class="info-box-icon bg-light elevation-1"><i class="far fa-handshake"></i></span>
+                            <div class="info-box-content">
+                                <span class="info-box-text">Ordinarias</span>
+                                <span class="info-box-number">
+                                    {{\App\MeetingPlanning::ordinary_plannings()->count()}}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-sm-12">
+                        <div class="info-box">
+                        <span class="info-box-icon bg-light elevation-1"><i class="fas fa-handshake"></i></span>
+                            <div class="info-box-content">
+                                <span class="info-box-text">Extraordinarias</span>
+                                <span class="info-box-number">
+                                    {{\App\MeetingPlanning::extraordinary_plannings()->count()}}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @endif
+
         {{-- REUNIONES DE CADA COMITÉ --}}
         @if(Auth::user()->hasRole('LECTURE'))
         <div class="card">
